@@ -26,8 +26,6 @@ docker run --entrypoint="sh" \
     -w "/root" \
     -e AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE \
     -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
-    -v "$HOME/.aws:/root/.aws" \
-    -v "`pwd`/install.sh:/root/install.sh" \
-    -v "`pwd`/*:/root" \
-    node:4.3 bash \
+    -v "`pwd`:/root" \
+    node:4.3 \
     ./install.sh
