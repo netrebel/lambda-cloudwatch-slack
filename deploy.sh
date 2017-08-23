@@ -22,7 +22,7 @@ echo "HOME:                 $HOME"
 eval "`aws ecr get-login`"
 
 # Run Terraform inside the hashicorp container
-docker run --entrypoint="sh" \
+docker run \
     -w "/root" \
     -e AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE \
     -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
